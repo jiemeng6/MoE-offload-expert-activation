@@ -24,6 +24,23 @@ vLLM Ascend Plugin
 </p>
 
 ---
+
+## Start L expert offload on a single Ascend A5
+
+From this repository's root, use a compatible vLLM runtime and a local
+DeepSeek-V4-Flash-0731 checkpoint with native W4A8 MXFP expert weights.
+Replace the model path and `0` with your checkpoint path and NPU device ID.
+
+```bash
+bash examples/serve_l_offload_a5.sh /models/DeepSeek-V4-Flash-0731 0
+```
+
+The service listens at `127.0.0.1:18861` with 84 expert slots, DSpark5, P2E0
+and up to two requests. The upstream DeepSeek validation used the
+[draft KV block-size fix](https://github.com/vllm-project/vllm-ascend/pull/20429)
+for heterogeneous draft KV groups.
+
+---
 *Latest News* 🔥
 
 - [2026/10] We released the new official version [v0.30.0](https://github.com/vllm-project/vllm-ascend/releases/tag/v0.30.0)! Please follow the [official guide](https://docs.vllm.ai/projects/ascend/en/v0.30.0/) to start using vLLM Ascend Plugin on Ascend.
