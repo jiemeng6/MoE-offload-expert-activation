@@ -40,6 +40,9 @@ and up to two requests. The upstream DeepSeek validation used the
 [draft KV block-size fix](https://github.com/vllm-project/vllm-ascend/pull/20429)
 for heterogeneous draft KV groups.
 
+See the [Chinese launcher guide](examples/serve_l_offload_a5.md) for setup,
+service checks and the baseline switch.
+
 ---
 *Latest News* 🔥
 
